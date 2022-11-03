@@ -7,17 +7,9 @@ import lombok.Getter;
 @Getter
 public enum ActionType {
 
-    DROP_DICE("DropDice"),
-
-    END_TURN("EndTurn"),
-
     BUY_REALTY("BuyRealty"),
 
     BUY_HOUSE("BuyHouse"),
-
-    lEAVE_PRISON_BY_CARD("leavePrisonByCard"),
-
-    lEAVE_PRISON_BY_MONEY("leavePrisonByMoney"),
 
     SELL_HOUSE("SellHouse"),
 
@@ -25,9 +17,9 @@ public enum ActionType {
 
     MONEY_OPERATION("MoneyOperation"),
 
-    SWAP("Swap"),
+    SWAP("Swap"),//СПРОСИТЬ У ДИМЫ
 
-    WAITING("Waiting");
+    WAITING("Waiting");//И НАСЧЕТ ЭТОГО
 
     private final String label;
 
