@@ -1,4 +1,4 @@
-package com.vpr.monopoly.realtymanager.controller.model;
+package com.vpr.monopoly.realtymanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
