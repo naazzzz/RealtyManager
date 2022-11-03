@@ -1,4 +1,4 @@
-package com.vpr.monopoly.realtymanager.controller.model.model;
+package com.vpr.monopoly.realtymanager.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

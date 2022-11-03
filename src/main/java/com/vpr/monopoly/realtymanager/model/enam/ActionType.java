@@ -1,4 +1,4 @@
-package com.vpr.monopoly.realtymanager.controller.model.model.enam;
+package com.vpr.monopoly.realtymanager.model.enam;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
