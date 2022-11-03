@@ -14,11 +14,11 @@ import java.util.Map;
 @AllArgsConstructor
 public class RealtyCardDto {
 
-    @Schema(description = "Позиция карты на поле")
+    @Schema(description = "Позиция карты на поле")//УЗНАТЬ НАСЧЕТ ПОЗИЦИИ
     private int position;
 
     @Schema(description = "Название улицы")
-    private String streetName;
+    private String CardName;
 
     @Schema(description = "Владелец карты")
     private String owner;
@@ -30,7 +30,13 @@ public class RealtyCardDto {
     private Long costCard;
 
     @Schema(description = "Стоимость дома")
-    private String costHouse;
+    private Long costHouse;
+
+    @Schema(description = "Залог")
+    private Long deposit;//Сказать диме про залог и изменить модель
+
+    @Schema(description = "Количество домов")
+    private Long countHouse;
 
     @Schema(description = "Цвет карты")
     private String color;
