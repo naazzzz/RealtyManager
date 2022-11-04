@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class RealtyCardService {
+public class RealtyCardClient {
     public List<RealtyCardDto> list_all_cards;
 
     public void set_all_RealtyCardService(){
@@ -28,7 +28,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 160);//4 дома
                     put((long) 5,(long) 250);//рента с отелем
                 }})
-                .deposit((long)30)
+
                 .costCard((long)60)
                 .costHouse((long)50)
                 .countHouse(null)
@@ -48,7 +48,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 320);//4 дома
                     put((long) 5,(long) 450);//рента с отелем
                 }})
-                .deposit((long)30)
+
                 .costCard((long)60)
                 .costHouse((long)50)
                 .countHouse(null)
@@ -68,7 +68,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 400);//4 дома
                     put((long) 5,(long) 550);//рента с отелем
                 }})
-                .deposit((long)50)
+
                 .costCard((long)100)
                 .costHouse((long)50)
                 .countHouse(null)
@@ -88,7 +88,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 400);//4 дома
                     put((long) 5,(long) 550);//рента с отелем
                 }})
-                .deposit((long)50)
+
                 .costCard((long)100)
                 .costHouse((long)50)
                 .countHouse(null)
@@ -108,7 +108,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 450);//4 дома
                     put((long) 5,(long) 600);//рента с отелем
                 }})
-                .deposit((long)60)
+
                 .costCard((long)120)
                 .costHouse((long)50)
                 .countHouse(null)
@@ -128,7 +128,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 625);//4 дома
                     put((long) 5,(long) 750);//рента с отелем
                 }})
-                .deposit((long)70)
+
                 .costCard((long)140)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -148,7 +148,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 625);//4 дома
                     put((long) 5,(long) 750);//рента с отелем
                 }})
-                .deposit((long)70)
+
                 .costCard((long)140)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -168,7 +168,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 700);//4 дома
                     put((long) 5,(long) 900);//рента с отелем
                 }})
-                .deposit((long)80)
+
                 .costCard((long)160)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -188,7 +188,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 750);//4 дома
                     put((long) 5,(long) 950);//рента с отелем
                 }})
-                .deposit((long)90)
+
                 .costCard((long)180)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -208,7 +208,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 750);//4 дома
                     put((long) 5,(long) 950);//рента с отелем
                 }})
-                .deposit((long)90)
+
                 .costCard((long)180)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -228,7 +228,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 800);//4 дома
                     put((long) 5,(long) 1000);//рента с отелем
                 }})
-                .deposit((long)100)
+
                 .costCard((long)200)
                 .costHouse((long)100)
                 .countHouse(null)
@@ -248,7 +248,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 875);//4 дома
                     put((long) 5,(long) 1050);//рента с отелем
                 }})
-                .deposit((long)110)
+
                 .costCard((long)220)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -268,7 +268,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 875);//4 дома
                     put((long) 5,(long) 1050);//рента с отелем
                 }})
-                .deposit((long)110)
+
                 .costCard((long)220)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -288,7 +288,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 925);//4 дома
                     put((long) 5,(long) 1100);//рента с отелем
                 }})
-                .deposit((long)120)
+
                 .costCard((long)240)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -308,7 +308,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 975);//4 дома
                     put((long) 5,(long) 1150);//рента с отелем
                 }})
-                .deposit((long)130)
+
                 .costCard((long)260)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -328,7 +328,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 975);//4 дома
                     put((long) 5,(long) 1150);//рента с отелем
                 }})
-                .deposit((long)130)
+
                 .costCard((long)260)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -348,7 +348,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1025);//4 дома
                     put((long) 5,(long) 1200);//рента с отелем
                 }})
-                .deposit((long)140)
+
                 .costCard((long)280)
                 .costHouse((long)150)
                 .countHouse(null)
@@ -368,7 +368,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1100);//4 дома
                     put((long) 5,(long) 1275);//рента с отелем
                 }})
-                .deposit((long)150)
+
                 .costCard((long)300)
                 .costHouse((long)200)
                 .countHouse(null)
@@ -388,7 +388,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1100);//4 дома
                     put((long) 5,(long) 1275);//рента с отелем
                 }})
-                .deposit((long)150)
+
                 .costCard((long)300)
                 .costHouse((long)200)
                 .countHouse(null)
@@ -408,7 +408,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1200);//4 дома
                     put((long) 5,(long) 1400);//рента с отелем
                 }})
-                .deposit((long)160)
+
                 .costCard((long)320)
                 .costHouse((long)200)
                 .countHouse(null)
@@ -428,7 +428,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1300);//4 дома
                     put((long) 5,(long) 1500);//рента с отелем
                 }})
-                .deposit((long)175)
+
                 .costCard((long)350)
                 .costHouse((long)200)
                 .countHouse(null)
@@ -448,7 +448,7 @@ public class RealtyCardService {
                     put((long) 4,(long) 1700);//4 дома
                     put((long) 5,(long) 2000);//рента с отелем
                 }})
-                .deposit((long)200)
+
                 .costCard((long)400)
                 .costHouse((long)200)
                 .countHouse(null)

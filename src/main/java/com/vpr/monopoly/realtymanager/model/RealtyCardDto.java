@@ -32,8 +32,6 @@ public class RealtyCardDto {
     @Schema(description = "Стоимость дома")
     private Long costHouse;
 
-    @Schema(description = "Залог")
-    private Long deposit;//Сказать диме про залог и изменить модель
 
     @Schema(description = "Количество домов")
     private Long countHouse;

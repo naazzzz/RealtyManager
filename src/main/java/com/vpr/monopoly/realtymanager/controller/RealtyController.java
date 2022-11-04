@@ -1,7 +1,7 @@
 package com.vpr.monopoly.realtymanager.controller;
 
 import com.vpr.monopoly.realtymanager.model.RealtyCardDto;
-import com.vpr.monopoly.realtymanager.service.RealtyCardService;
+import com.vpr.monopoly.realtymanager.service.RealtyCardClient;
 import com.vpr.monopoly.realtymanager.service.RealtyManagerService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public class RealtyController {
 
     private final RealtyManagerService realtyservice;
 
-    private final RealtyCardService rc;
+    private final RealtyCardClient rc;
 
     @GetMapping("/allcards")
     public ResponseEntity<List<RealtyCardDto>> endGame(){
