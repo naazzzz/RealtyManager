@@ -10,10 +10,9 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class RealtyCardClient {
-    public List<RealtyCardDto> list_all_cards;
+public class RealtyCardService {
 
-    public void set_all_RealtyCardService(){
+    public List<RealtyCardDto> setАllRealtyCardService(){
         List<RealtyCardDto> list_cards =  new ArrayList<RealtyCardDto>();
         list_cards.add(RealtyCardDto.builder()
                 .position(1)
@@ -53,6 +52,23 @@ public class RealtyCardClient {
                 .costHouse((long)50)
                 .countHouse(null)
                 .color("yellow")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
+                .position(5)
+                .CardName("Восточный морской порт")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 25);//Рента без строений
+                    put((long) 1,(long) 50);//1 дом
+                    put((long) 2,(long) 100);//2 дома
+                    put((long) 3,(long) 200);//3 дома
+                }})
+                .costCard((long)200)
+                .costHouse(null)
+                .countHouse(null)
+                .color("port")
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
@@ -136,6 +152,21 @@ public class RealtyCardClient {
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
+                .position(12)
+                .CardName("Электрическая компания")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 4);//Рента без строений
+                    put((long) 1,(long) 10);//1 дом
+                }})
+                .costCard((long)150)
+                .costHouse(null)
+                .countHouse(null)
+                .color("utilities")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
                 .position(13)
                 .CardName("Деловой квартал")
                 .owner(null)
@@ -173,6 +204,23 @@ public class RealtyCardClient {
                 .costHouse((long)100)
                 .countHouse(null)
                 .color("green")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
+                .position(15)
+                .CardName("Южный морской порт")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 25);//Рента без строений
+                    put((long) 1,(long) 50);//1 дом
+                    put((long) 2,(long) 100);//2 дома
+                    put((long) 3,(long) 200);//3 дома
+                }})
+                .costCard((long)200)
+                .costHouse(null)
+                .countHouse(null)
+                .color("port")
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
@@ -296,6 +344,23 @@ public class RealtyCardClient {
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
+                .position(25)
+                .CardName("Северный морской порт")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 25);//Рента без строений
+                    put((long) 1,(long) 50);//1 дом
+                    put((long) 2,(long) 100);//2 дома
+                    put((long) 3,(long) 200);//3 дома
+                }})
+                .costCard((long)200)
+                .costHouse(null)
+                .countHouse(null)
+                .color("port")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
                 .position(26)
                 .CardName("Компьютеры")
                 .owner(null)
@@ -333,6 +398,21 @@ public class RealtyCardClient {
                 .costHouse((long)150)
                 .countHouse(null)
                 .color("pink")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
+                .position(28)
+                .CardName("Водопроводная компания")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 4);//Рента без строений
+                    put((long) 1,(long) 10);//1 дом
+                }})
+                .costCard((long)150)
+                .costHouse(null)
+                .countHouse(null)
+                .color("utilities")
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
@@ -416,6 +496,23 @@ public class RealtyCardClient {
                 .build()
         );
         list_cards.add(RealtyCardDto.builder()
+                .position(35)
+                .CardName("Западный морской порт")
+                .owner(null)
+                .priceMap(new HashMap<Long, Long>(){{
+                    put((long) -1,(long) 0);//Собственность заложена
+                    put((long) 0,(long) 25);//Рента без строений
+                    put((long) 1,(long) 50);//1 дом
+                    put((long) 2,(long) 100);//2 дома
+                    put((long) 3,(long) 200);//3 дома
+                }})
+                .costCard((long)200)
+                .costHouse(null)
+                .countHouse(null)
+                .color("port")
+                .build()
+        );
+        list_cards.add(RealtyCardDto.builder()
                 .position(37)
                 .CardName("Курортная зона")
                 .owner(null)
@@ -455,6 +552,6 @@ public class RealtyCardClient {
                 .color("lightblue")
                 .build()
         );
-        list_all_cards=list_cards;
+        return list_cards;
     }
 }
