@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Map;
 
 @Schema(description = "Модель действия и результата действия в ходе игры")
@@ -13,7 +14,7 @@ import java.util.Map;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class ActionDto {
+public class ActionDto implements Serializable {
 
     @Schema(description = "Тип действия")
     private String actionType;
