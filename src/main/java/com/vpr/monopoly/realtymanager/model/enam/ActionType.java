@@ -13,13 +13,7 @@ public enum ActionType {
 
     SELL_HOUSE("SellHouse"),
 
-    SELL_REALTY("SellRealty"),
-
-    MONEY_OPERATION("MoneyOperation"),
-
-    SWAP("Swap"),//СПРОСИТЬ У ДИМЫ
-
-    WAITING("Waiting");//И НАСЧЕТ ЭТОГО
+    SELL_REALTY("SellRealty");
 
     private final String label;
 
