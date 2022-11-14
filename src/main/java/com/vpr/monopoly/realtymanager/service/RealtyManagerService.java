@@ -15,5 +15,5 @@ public interface RealtyManagerService {
 
     boolean isPlayerToPlayerInteraction(ActionDto action);
 
-    List<RealtyCardDto> getAllRealtyCards(RealtyCardClient rc);
+    List<RealtyCardDto> getAllRealtyCards();
 }
