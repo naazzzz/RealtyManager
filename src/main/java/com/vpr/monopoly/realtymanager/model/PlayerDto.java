@@ -28,6 +28,9 @@ public class PlayerDto implements Serializable {
     @Schema(description = "Карта выхода из тюрьмы")
     private int prisonOutCard;
 
+    @Schema(description = "Список полного набора карточек одного цвета")
+    private List<String> monopolies;
+
     @Schema(description = "Деньги")
     private Long money;
 
