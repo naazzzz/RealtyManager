@@ -20,7 +20,7 @@ public class RealtyCardDto implements Serializable {
     private int position;
 
     @Schema(description = "Название улицы")
-    private String CardName;
+    private String cardName;
 
     @Schema(description = "Владелец карты")
     private String owner;
