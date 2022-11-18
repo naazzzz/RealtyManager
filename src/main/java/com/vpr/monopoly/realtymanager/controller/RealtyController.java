@@ -40,4 +40,11 @@ public class RealtyController {
         return ResponseEntity.ok(action);
     }
 
+    @PostMapping("/toplayer")
+    public ResponseEntity<ActionDto> toPlayer(@RequestBody ActionDto actionDto)
+    {
+        ActionDto action =realtyservice.playerToPlayerInteraction(actionDto);
+        return ResponseEntity.ok(action);
+    }
+
 }
