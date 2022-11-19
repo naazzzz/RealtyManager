@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vpr.monopoly.realtymanager.model.ActionDto;
 import com.vpr.monopoly.realtymanager.model.PlayerDto;
 import com.vpr.monopoly.realtymanager.model.RealtyCardDto;
+import com.vpr.monopoly.realtymanager.model.enam.ActionType;
+import com.vpr.monopoly.realtymanager.service.client.BankClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +21,8 @@ import java.util.Map;
 public class RealtyManagerServiceImpl implements RealtyManagerService {
     private final ObjectMapper objectMapper;
     private final RealtyCardService rc;
+
+    private final BankClient bankClient;
 
     @Override
     public PlayerDto testColorMonopoly(PlayerDto player){
@@ -94,23 +98,40 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
     }
     @Override
     public ActionDto playerToBankInteraction(ActionDto action) {
-
         String type=action.getActionType();
         Map<String,Object> act= action.getActionBody();
         PlayerDto player= (PlayerDto) act.get("player");
         RealtyCardDto realty = (RealtyCardDto) act.get("realty");
+        List<PlayerDto> list = new ArrayList<>();
         switch (type){
             case "BuyRealty":
                 realty.setOwner(player.getPlayerFigure());
                 List<RealtyCardDto> realtyList =player.getRealtyList();
                 realtyList.add(realty);
                 player.setRealtyList(realtyList);
-
                 player=testColorMonopoly(player);
-
+                act.clear();
+                list.add(player);
+                type= ActionType.MONEY_OPERATION.toString();
+                act.put("player",list);
+                act.put("money",realty.getCostCard());
+                ActionDto request = ActionDto.builder()
+                        .actionType(type)
+                        .actionBody(act)
+                        .build();
+                ActionDto response = bankClient.playerToBankInteraction(request);
+                type=response.getActionType();
+                act= response.getActionBody();
+                List<?> players= objectMapper.convertValue(act.get("player"),List.class);
+                player=(PlayerDto) players.get(0);
                 act.clear();
                 act.put("player",player);
-                break;
+                type=ActionType.BUY_REALTY.toString();
+                return ActionDto.builder()
+                        .actionType(type)
+                        .actionBody(act)
+                        .build();
+
             case "BuyHouse":
                 RealtyCardDto minCountHouseCard=new RealtyCardDto();
                 List<RealtyCardDto> realtyList1 =player.getRealtyList();
@@ -126,16 +147,26 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                     if(min==5L){
                         act.clear();
                         act.put("player", player);
-                        break;
+                        return ActionDto.builder()
+                                .actionType(type)
+                                .actionBody(act)
+                                .build();
                     }
                     else {
                         minCountHouseCard.setCountHouse(realty.getCountHouse() + 1);
                         player.setRealtyList(realtyList1);
                         act.clear();
-                        act.put("player", player);
+                        list = new ArrayList<>();
+                        list.add(player);
+                        act.put("player",list);
+                        act.put("money",realty.getCostCard());
+                        request = ActionDto.builder()
+                                .actionType(type)
+                                .actionBody(act)
+                                .build();
+                        return bankClient.playerToBankInteraction(request);             //НЕПРАВИЛЬНО
                     }
                 }
-                break;
             case "SellHouse":
                 List<RealtyCardDto> realtyList2 =player.getRealtyList();
                 RealtyCardDto itsRealty1 = realtyList2.get(realtyList2.indexOf(realty));
