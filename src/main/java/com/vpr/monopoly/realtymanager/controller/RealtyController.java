@@ -15,7 +15,7 @@ import java.util.List;
 
 @Tag(name = "REALTY CONTROLLER", description = "API для управления медежером недвижимости")
 @RestController
-@RequestMapping("/api/realtymanager")
+@RequestMapping("${api.path}")
 @Validated
 @RequiredArgsConstructor
 @Slf4j
@@ -27,13 +27,14 @@ public class RealtyController {
     @GetMapping("/allcards")
     public ResponseEntity<List<RealtyCardDto>> allCard(){
         List<RealtyCardDto> all_cards = realtyservice.getAllRealtyCards();
-        log.info("get all cards");
+        log.info("get all cards request");
         return ResponseEntity.ok(all_cards);
     }
     @PostMapping("/tobank")
     public ResponseEntity<ActionDto> toBank(@RequestBody ActionDto actionDto)
     {
         ActionDto action =realtyservice.playerToBankInteraction(actionDto);
+        log.info("to bank request");
         return ResponseEntity.ok(action);
     }
 
@@ -41,6 +42,7 @@ public class RealtyController {
     public ResponseEntity<ActionDto> toPlayer(@RequestBody ActionDto actionDto)
     {
         ActionDto action =realtyservice.playerToPlayerInteraction(actionDto);
+        log.info("to player request");
         return ResponseEntity.ok(action);
     }
 

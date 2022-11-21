@@ -17,7 +17,6 @@ public class RealtyCardService {
         list_cards.add(RealtyCardDto.builder()
                 .position(1)
                 .cardName("Старая Дорога")
-
                 .priceMap(new HashMap<Long, Long>(){{
                     put( -1L, 0L);//Собственность заложена
                     put(0L, 2L);//Рента без строений

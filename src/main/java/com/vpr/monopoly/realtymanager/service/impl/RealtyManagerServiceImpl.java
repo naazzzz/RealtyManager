@@ -144,6 +144,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                             .build();
                 }
                 else{
+                    log.info("due to the lack of connection with the bank, the money transaction is performed in realtymanager.");
                     player.setMoney(player.getMoney()-realty.getCostCard());
                     act.clear();
                     act.put("player", player);
@@ -166,6 +167,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                         }
                     }
                     if (min == 5L) {
+                        log.error("The player {} has the maximum number of houses",player);
                         act.clear();
                         act.put("player", player);
                         return ActionDto.builder()
@@ -188,6 +190,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                         return bankClient.playerToBankInteraction(request);
                         }
                     else{
+                        log.info("due to the lack of connection with the bank, the money transaction is performed in realtymanager.");
                         minCountHouseCard.setCountHouse(realty.getCountHouse() + 1);
                         Long price=realty.getPriceMap().get(realty.getCountHouse()+1);
                         player.setMoney(player.getMoney()-price);
@@ -218,6 +221,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                             .build();
                     return bankClient.playerToBankInteraction(request);
                 }else{
+                    log.info("due to the lack of connection with the bank, the money transaction is performed in realtymanager.");
                     Long price=realty.getPriceMap().get(realty.getCountHouse()+1);
                     player.setMoney(player.getMoney()+price);
                     act.clear();
@@ -245,6 +249,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                     return bankClient.playerToBankInteraction(request);
                 }
                 else {
+                    log.info("due to the lack of connection with the bank, the money transaction is performed in realtymanager.");
                     Long price=realty.getCostCard()/2;
                     player.setMoney(player.getMoney()+price);
                     act.clear();
@@ -256,6 +261,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                             .build();
                 }
             default:
+                log.error("incorrectly entered actionType {}",type);
                 return ActionDto.builder()
                     .actionType(type)
                     .actionBody(act)
@@ -331,6 +337,7 @@ public class RealtyManagerServiceImpl implements RealtyManagerService {
                         .build();
                 return bankClient.playerToPlayerInteraction(request);
             } else {
+                log.info("due to the lack of connection with the bank, the money transaction is performed in realtymanager.");
                 player1.setMoney(player1.getMoney() + money);
                 player2.setMoney(player2.getMoney() - money);
                 act.clear();
