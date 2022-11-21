@@ -1,9 +1,7 @@
 package com.vpr.monopoly.realtymanager.controller;
 
 import com.vpr.monopoly.realtymanager.model.ActionDto;
-import com.vpr.monopoly.realtymanager.model.PlayerDto;
 import com.vpr.monopoly.realtymanager.model.RealtyCardDto;
-import com.vpr.monopoly.realtymanager.service.RealtyCardService;
 import com.vpr.monopoly.realtymanager.service.RealtyManagerService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Map;
 
 @Tag(name = "REALTY CONTROLLER", description = "API для управления медежером недвижимости")
 @RestController

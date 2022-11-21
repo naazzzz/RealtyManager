@@ -1,4 +1,4 @@
-package com.vpr.monopoly.realtymanager.service;
+package com.vpr.monopoly.realtymanager.service.impl;
 
 import com.vpr.monopoly.realtymanager.model.RealtyCardDto;
 import lombok.RequiredArgsConstructor;
