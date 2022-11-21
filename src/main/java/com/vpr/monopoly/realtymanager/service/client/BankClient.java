@@ -18,7 +18,7 @@ import static com.vpr.monopoly.realtymanager.model.enam.ActionType.MONEY_OPERATI
 @Slf4j
 public class BankClient implements BankService {
 
-    @Value("http://localhost:8081/api/bank")
+    @Value("${bank.service.base.url}")
     private String baseUrl;
 
     private WebClient webClient;
